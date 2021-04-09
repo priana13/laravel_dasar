@@ -31,4 +31,9 @@ class HomeController extends Controller
     {
         return $request->nama;
     }
+
+    public function user($nama)
+    {
+        return view('user')->with('nama',$nama);
+    }
 }
