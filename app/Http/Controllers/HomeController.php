@@ -42,7 +42,7 @@ class HomeController extends Controller
         //     'fullname' => "Priana Saputra"
             
         //     ]);
-
-        return view('user',compact('nama'));
+        $data['nama'] = $nama;
+        return view('user',$data);
     }
 }
