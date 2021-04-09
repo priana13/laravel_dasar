@@ -12,9 +12,13 @@
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
-                    @endif
+                    @endif                    
+                        <form action="{{route('form')}}" method="post">
+                            @csrf
+                            <input type="text" name="nama">
+                            <button type="submit">Kirim</button>
+                        </form>
 
-                    You are logged in!
                 </div>
             </div>
         </div>
