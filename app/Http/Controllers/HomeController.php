@@ -34,10 +34,15 @@ class HomeController extends Controller
 
     public function user($nama)
     {
-        return view('user')->with([
-            'name' => $nama,
-            'fullname' => "Priana Saputra"
+
+        // dd(compact('nama'));
+        
+        // return view('user')->with([
+        //     'name' => $nama,
+        //     'fullname' => "Priana Saputra"
             
-            ]);
+        //     ]);
+
+        return view('user',compact('nama'));
     }
 }

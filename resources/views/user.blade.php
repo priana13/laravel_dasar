@@ -1,1 +1,1 @@
-Hallo {{$fullname}}
+Hallo {{$nama}}
