@@ -15,8 +15,14 @@
                     @endif                    
                         <form action="{{route('form')}}" method="post">
                             @csrf
-                            <input type="text" name="nama">
-                            <button type="submit">Kirim</button>
+
+                            <label for="">
+                                 <input type="text" name="email">
+                            </label>
+                            @if($errors->has('email'))
+                                {{$errors->first('email')}}
+                            @endif
+                            <button type="submit">Subsribe</button>
                         </form>
 
                 </div>

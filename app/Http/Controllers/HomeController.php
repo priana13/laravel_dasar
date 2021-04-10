@@ -29,7 +29,13 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        return $request->nama;
+        // validasi
+
+        $this->validate($request,[
+            'email'=> 'required|email' 
+        ]);
+
+        dd($request->email);
     }
 
     public function user($nama)
