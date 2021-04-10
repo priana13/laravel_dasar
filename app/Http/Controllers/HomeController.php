@@ -33,6 +33,8 @@ class HomeController extends Controller
 
         $this->validate($request,[
             'email'=> 'required|email' 
+        ],[
+            'required' => ":attribute Tidak Boleh Kosong"
         ]);
 
         dd($request->email);
