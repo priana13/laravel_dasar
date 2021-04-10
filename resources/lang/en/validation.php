@@ -130,8 +130,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'email' => [
+            'required' => ':attribute tidak boleh kosong',
+            'email' => 'Ups, Anda memasukan Email yang tidak valid'
         ],
     ],
 
