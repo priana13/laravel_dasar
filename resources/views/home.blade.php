@@ -16,14 +16,22 @@
                         <form action="{{route('form')}}" method="post">
                             @csrf
 
-                            <label for="">
-                                 <input type="text" name="email">
-                            </label>
-                            @if($errors->has('email'))
-                                {{$errors->first('email')}}
-                            @endif
-                            <button type="submit">Subsribe</button>
+
+                            <div class="form-group">
+                                <input class="form-control {{$errors->has('email') ? 'is-invalid' : ''}}" type="text" name="email"  placeholder="Email Anda">
+                                
+                                <div class="invalid-feedback">
+                                    @if($errors->has('email'))
+                                        {{$errors->first('email')}}
+                                    @endif
+                                </div>                            
+                            </div>
+
+                            
+                            <button class="btn btn-primary" type="submit">Subsribe</button>
                         </form>
+
+
 
                 </div>
             </div>
