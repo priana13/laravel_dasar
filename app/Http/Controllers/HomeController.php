@@ -40,7 +40,7 @@ class HomeController extends Controller
         // [
         //     'required' => ":attribute Tidak Boleh Kosong"
         // ]);
-        return redirect()->route('lain');
+        return redirect()->back();
         // dd($request->email);
     }
 
