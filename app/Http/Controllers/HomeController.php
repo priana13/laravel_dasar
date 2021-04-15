@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserVerficationMail;
 
 class HomeController extends Controller
 {
@@ -65,5 +67,12 @@ class HomeController extends Controller
         //     ]);
         $data['nama'] = $nama;
         return view('user',$data);
+    }
+
+    public function email()
+    {
+        Mail::to('priana.yhc@gmail.com')->send(new UserVerficationMail());
+
+        return 'Email berhasil';
     }
 }
