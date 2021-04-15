@@ -24,8 +24,17 @@ class HomeController extends Controller
     public function index()
     {
 
+        $data = [
+            'posts' => [
+                ['id' => 1,'title' => 'ABC'],
+                ['id' => 2,'title' => 'DEF'],
+                ['id' => 3,'title' => 'GHI']
+            ]
+            ];
+        //menambil data dari database
+       return response()->json($data,200);
         // return redirect()->to('form');
-        return view('home');
+        // return view('home');
     }
 
     public function store(Request $request)
