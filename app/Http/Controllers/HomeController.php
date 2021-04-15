@@ -24,7 +24,8 @@ class HomeController extends Controller
     public function index()
     {
 
-        return redirect()->to('form');
+        // return redirect()->to('form');
+        return view('home');
     }
 
     public function store(Request $request)
@@ -39,8 +40,8 @@ class HomeController extends Controller
         // [
         //     'required' => ":attribute Tidak Boleh Kosong"
         // ]);
-
-        dd($request->email);
+        return redirect()->route('lain');
+        // dd($request->email);
     }
 
     public function user($nama)
