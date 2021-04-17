@@ -34,9 +34,9 @@ class HomeController extends Controller
             ]
             ];
         //menambil data dari database
-       return response()->json($data,200);
+       //return response()->json($data,200);
         // return redirect()->to('form');
-        // return view('home');
+        return view('home');
     }
 
     public function store(Request $request)

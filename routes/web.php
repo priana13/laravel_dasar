@@ -26,3 +26,6 @@ Route::get('/lain', function () {
 })->name('lain');
 
 Route::get('/email', 'HomeController@email')->name('email');
+
+Route::resource('wa', 'BroadcastController');
+
