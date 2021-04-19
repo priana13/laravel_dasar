@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Newsletter\SubcriptionFormRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserVerficationMail;
+use App\Mail\NotifEmail;
 
 class HomeController extends Controller
 {
@@ -72,7 +73,7 @@ class HomeController extends Controller
 
     public function email()
     {
-        Mail::to('priana.yhc@gmail.com')->send(new UserVerficationMail());
+        Mail::to('priana.yhc@gmail.com')->send(new NotifEmail());
 
         return 'Email berhasil';
     }
