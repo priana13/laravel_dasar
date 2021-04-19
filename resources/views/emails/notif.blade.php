@@ -1,12 +1,12 @@
 @component('mail::message')
-# Mari Tumbuh Bersama Kami
+# Lets Grow with Us
 
 Jangan lewatkan kesempatan untuk meraih peluang lebih banyak dan jangkauan pelanggan lebih luas dengan membangun rumah di dunia maya
 
 @component('mail::button', ['url' => 'https://pondokwebsite.net'])
-Beli Sekarang
+Coba Sekarang
 @endcomponent
 
 Thanks,<br>
-{{ config('app.name') }}
+Priana Saputra
 @endcomponent

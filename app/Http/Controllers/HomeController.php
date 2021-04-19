@@ -73,8 +73,8 @@ class HomeController extends Controller
 
     public function email()
     {
-        Mail::to('priana.yhc@gmail.com')->send(new NotifEmail());
+        // Mail::to('priana.yhc@gmail.com')->send(new NotifEmail());
 
-        return 'Email berhasil';
+        return new NotifEmail();
     }
 }
