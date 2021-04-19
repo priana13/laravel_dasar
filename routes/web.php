@@ -21,3 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/post', 'HomeController@store')->name('form');
 Route::get('/user/{nama}', 'HomeController@user');
 
+Route::get('/lain', function () {
+    return "oke berhasil ke halaman lain";
+})->name('lain');
+
+Route::get('/email', 'HomeController@email')->name('email');
+
+Route::resource('wa', 'BroadcastController');
+

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\Newsletter\SubcriptionFormRequest;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserVerficationMail;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,16 @@ class HomeController extends Controller
     public function index()
     {
 
+        $data = [
+            'posts' => [
+                ['id' => 1,'title' => 'ABC'],
+                ['id' => 2,'title' => 'DEF'],
+                ['id' => 3,'title' => 'GHI']
+            ]
+            ];
+        //menambil data dari database
+       //return response()->json($data,200);
+        // return redirect()->to('form');
         return view('home');
     }
 
@@ -41,8 +52,8 @@ class HomeController extends Controller
         // [
         //     'required' => ":attribute Tidak Boleh Kosong"
         // ]);
-
-        dd($request->email);
+        return back();
+        // dd($request->email);
     }
 
     public function user($nama)
@@ -57,5 +68,12 @@ class HomeController extends Controller
         //     ]);
         $data['nama'] = $nama;
         return view('user',$data);
+    }
+
+    public function email()
+    {
+        Mail::to('priana.yhc@gmail.com')->send(new UserVerficationMail());
+
+        return 'Email berhasil';
     }
 }
