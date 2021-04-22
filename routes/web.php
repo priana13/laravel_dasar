@@ -29,3 +29,15 @@ Route::get('/email', 'HomeController@email')->name('email');
 
 Route::resource('wa', 'BroadcastController');
 
+Route::get('/seed', function(\App\Post $post){
+
+    $faker = Faker\Factory::create();
+
+    foreach (range(1,100) as $x) {
+       $post->create([
+           'title' => $faker->sentence(5),
+           'content' => $faker->sentence(100)
+       ]);
+    }
+});
+
