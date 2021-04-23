@@ -78,7 +78,7 @@ class PostController extends Controller
 
         $post = Post::find($id);
 
-        // dd($post->created_at->diffForHumans());
+        // dd($post->publised_at);
 
         return view('post.show',[
             'post' => $post,
