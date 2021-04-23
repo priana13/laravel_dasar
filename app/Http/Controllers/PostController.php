@@ -21,6 +21,9 @@ class PostController extends Controller
     {
         $posts = Post::paginate(5);
 
+
+
+
         return view('post.index',[
             'posts' => $posts,
 
@@ -72,7 +75,15 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $post = Post::find($id);
+
+        // dd($post->created_at->diffForHumans());
+
+        return view('post.show',[
+            'post' => $post,
+
+        ]);
     }
 
     /**
