@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/post', 'PostController@index')->name('post.index');
 Route::post('/post', 'HomeController@store')->name('form');
-
+Route::get('/post/create', 'PostController@create');
 
 
 

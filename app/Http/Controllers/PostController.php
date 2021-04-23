@@ -34,7 +34,23 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        
+        //Cara pertama dengan $fillable di model
+        // Post::create([
+        //     'title' => "Judul artikel",
+        //     'content' => "ini adalah isi dari konten"
+        // ]);
+
+        // Cara kedua tanpa $fillable di model
+
+        $post = new Post;
+
+        $post->title = "Judul 2";
+        $post->content = "Isi dari konten 2";
+
+        $post->save();
+        
+        return 'ok';
     }
 
     /**
@@ -45,7 +61,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
