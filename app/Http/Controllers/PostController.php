@@ -83,7 +83,19 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+
+        // Cara Update pertama
+        // $post->update([
+        //     'title' => 'Post Satu'
+        // ]);
+
+        $post->title = "Judul 1 yang telah diedit";
+        $post->save();
+
+
+
+
     }
 
     /**

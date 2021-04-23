@@ -23,6 +23,8 @@ Route::get('/post', 'PostController@index')->name('post.index');
 Route::post('/post', 'HomeController@store')->name('form');
 Route::get('/post/create', 'PostController@create');
 
+Route::get('/post/{post}', 'PostController@edit');
+
 
 
 Route::get('/user/{nama}', 'HomeController@user');
