@@ -25,6 +25,8 @@ Route::get('/post/create', 'PostController@create');
 
 Route::get('/post/{post}', 'PostController@edit');
 
+Route::get('/post/{post}/delete', 'PostController@destroy');
+
 
 
 Route::get('/user/{nama}', 'HomeController@user');
