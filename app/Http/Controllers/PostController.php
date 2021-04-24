@@ -18,17 +18,17 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
 
 
-        $user = User::find($id);
+        // $user = User::find($id);
 
-        return $user->FullName();
+        // return $user->FullName();
 
-        $posts = Post::paginate(5);
+        // $posts = Post::paginate(5);
 
-
+        $posts = Post::PostBulanIni()->get();
 
 
         return view('post.index',[

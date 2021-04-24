@@ -11,4 +11,10 @@ class Post extends Model
     protected $dates = [
         'publised_at'
     ];
+
+
+    public function scopePostBulanIni($query)
+    {
+        return $query->where('created_at','>',date('Y-m-d'));
+    }
 }
