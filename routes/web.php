@@ -24,6 +24,7 @@ Route::post('/post', 'HomeController@store')->name('form');
 Route::get('/post/create', 'PostController@create');
 
 Route::get('/post/{post}', 'PostController@show');
+Route::get('/user/{id}', 'PostController@index');
 
 Route::get('/post/{post}/delete', 'PostController@destroy');
 
