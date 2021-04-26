@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'email', 'password',
     ];
 
     /**
@@ -40,5 +40,15 @@ class User extends Authenticatable
     public function FullName()
     {
         return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('Active',false);
+    }
+
+    public function scopeUmur($query,$umur)
+    {
+        return $query->where('age','>=',$umur);
     }
 }

@@ -28,6 +28,10 @@ class PostController extends Controller
 
         // $posts = Post::paginate(5);
 
+        $user = User::Umur(12)->get();
+
+        dd($user);
+
         $posts = Post::PostBulanIni()->get();
 
 
