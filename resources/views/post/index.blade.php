@@ -16,7 +16,11 @@
     <p>{{ str_limit($post->content,150) }}</p>
     @endforeach
 
-    {{$posts->appends(['limit'=>Request::get('limit')])->links()}}
+    {{$posts->appends([
+        'limit'=>Request::get('limit'),
+        'order'=>Request::get('order')
+        
+        ])->links()}}
 @endif
 
 </body>

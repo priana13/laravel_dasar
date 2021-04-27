@@ -20,7 +20,8 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $posts = Post::latest()->paginate($request->get('limit',4));
+        $posts = Post::orderBy('id',$request->get('order','desc'))
+                    ->paginate($request->get('limit',4));
 
         return view('post.index',[
             'posts' => $posts,
