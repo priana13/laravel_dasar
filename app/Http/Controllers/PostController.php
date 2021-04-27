@@ -18,22 +18,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
-
-        // $user = User::find($id);
-
-        // return $user->FullName();
-
-        // $posts = Post::paginate(5);
-
-        $user = User::Umur(12)->get();
-
-        dd($user);
-
-        $posts = Post::PostBulanIni()->get();
-
+        $posts = Post::latest()->paginate($request->get('limit'));
 
         return view('post.index',[
             'posts' => $posts,
