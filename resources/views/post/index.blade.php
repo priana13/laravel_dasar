@@ -16,7 +16,7 @@
     <p>{{ str_limit($post->content,150) }}</p>
     @endforeach
 
-    {{$posts->render()}}
+    {{$posts->appends(['limit'=>Request::get('limit')])->links()}}
 @endif
 
 </body>
