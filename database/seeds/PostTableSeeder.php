@@ -6,14 +6,6 @@ use Faker\Generator as Faker;
 
 class PostTableSeeder extends Seeder
 {
-    protected $post;
-    protected $faker;
-
-    public function __construct(Post $post, Faker $faker)
-    {
-        $this->post = $post;
-        $this->faker = $faker;
-    }
     /**
      * Run the database seeds.
      *
@@ -21,14 +13,6 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach (range(1,100) as $x) {
-       
-            Post::create([
-                'title' => $this->faker->sentence(5),
-                'content' => $this->faker->sentence(100),
-                'slug'=>uniqid(),
-                'is_published' => 0
-            ]);
-         }
+        factory(Post::class,150)->create();
     }
 }

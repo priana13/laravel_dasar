@@ -13,7 +13,7 @@
     @foreach($posts as $post)
 
     <h2>{{$post->title}}</h2>
-    <p>{{ str_limit($post->content,150) }}</p>
+    <p>{{ $post->content }}</p>
     @endforeach
 
     {{$posts->appends(request()->only('limit','order'))->links()}}
